@@ -59,9 +59,11 @@
       state: present
 
   - name: check cities schema exits or not
-    ansible.builtin.command: mysql -h mysql.joinaiops76.online  -uroot -p{{mysql_passwo}} -sN -e "SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME='cities'"
+    ansible.builtin.command: mysql -h mysql.joinaiops76.online  -uroot -p{{mysql_password}} -sN -e "SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME='cities'"
     register: schema
 
   - name: print output
     ansible.builtin.debug:
       msg: " schema output {{schema}}"
+
+  - name: load cities data
