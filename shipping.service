@@ -1,0 +1,9 @@
+[Unit]
+Description=Shipping Service
+
+[Service]
+User=roboshop
+Environment=CART_ENDPOINT=cart.joinaiops76.onlin:8080
+Environment=DB_HOST=mysql.joinaiops76.onlin
+ExecStart=/bin/java -jar /app/shipping.jar
+SyslogIdentifier=shipping
