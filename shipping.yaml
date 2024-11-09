@@ -66,4 +66,4 @@
     ansible.builtin.debug:
       msg: " schema output {{schema}}"
 
-  - name: load cities data
+ 
